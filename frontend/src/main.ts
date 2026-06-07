@@ -1,6 +1,6 @@
 import "./styles/main.css";
 
-import { Navbar } from "./components/Navbar";
+import { Navbar, initNavbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Footer } from "./components/Footer";
 import { initFireflies } from "./components/Fireflies";
@@ -41,3 +41,4 @@ app.innerHTML = `
 `;
 
 initFireflies();
+initNavbar();

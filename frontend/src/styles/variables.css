@@ -1,0 +1,30 @@
+:root {
+
+  /* Brand Colors */
+  --color-primary: #5ca05d;
+  --color-secondary: #7a2400;
+
+  /* Forest Theme */
+  --color-dark: #0f1710;
+  --color-forest: #1b2d1f;
+  --color-moss: #324f35;
+
+  /* Light */
+  --color-light: #f5f3e8;
+  --color-cream: #e8dfc8;
+
+  /* Effects */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px rgba(92, 160, 93, 0.35);
+
+  /* Layout */
+  --max-width: 1400px;
+
+  /* Typography */
+  --font-heading: "Cinzel", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s ease;
+}

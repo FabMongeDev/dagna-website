@@ -66,3 +66,36 @@ Payments
 ### Phase 5
 
 Administration panel
+
+## Home Page Layout
+
+### Navbar
+
+- Logo
+- Home
+- Shop
+- About
+- Reviews
+- Contact
+- Login
+- Register
+- Cart
+
+### Hero
+
+- Background image
+- Fireflies
+- Falling leaves
+- Main CTA
+
+### Featured Products
+
+- Product placeholders
+
+### About Dagna
+
+### Reviews
+
+### Contact
+
+### Footer

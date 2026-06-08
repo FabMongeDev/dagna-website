@@ -1,42 +1,45 @@
 # Dagna Website
 
-Dagna Website is an e-commerce platform designed for a local artisan specializing in handmade gnomes, fairies, and fantasy-inspired crafts.
+Dagna Website is a handcrafted e-commerce platform for a local artisan specializing in gnomes, fairies, seasonal decorations, and custom fantasy-themed creations.
 
-## Features
+## Current Features
 
-- Product catalog
-- Shopping cart
-- User registration and login
-- Customer reviews
-- Order management
-- Social media integration
-- Responsive design
+* Responsive navigation bar
+* Desktop, tablet, and mobile layouts
+* Animated mystical forest background
+* Organic firefly system
+* Dynamic leaf system with ambient forest effects
+* Hero section
+* Collectible-style product cards
+* Interactive Wisp AI effect
+* About Dagna section
 
 ## Technology Stack
 
-### Frontend
+Frontend:
 
-- TypeScript
-- Vite
-- HTML5
-- CSS3
+* TypeScript
+* Vite
+* HTML5
+* CSS3
 
-### Backend
+Planned Backend:
 
-- PHP 8
+* PHP
+* MySQL
 
-### Database
+Hosting:
 
-- MySQL
+* Hostinger (planned)
 
-### Hosting
+## Roadmap
 
-- Hostinger
-
-## Status
-
-Project currently in planning and design phase.
-
-## Author
-
-FabMongeDev
+* Reviews Section
+* Contact Section
+* Footer Improvements
+* Product Catalog Integration
+* User Authentication
+* Shopping Cart
+* Order Management
+* Payment Integration
+* Admin Panel

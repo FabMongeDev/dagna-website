@@ -1,101 +1,328 @@
 # Requirements
 
-## Functional Requirements
+## Project Overview
 
-### Public Users
+Dagna Website is an e-commerce platform for a local artisan specializing in handcrafted gnomes, fairies, seasonal decorations, and custom fantasy-themed creations.
 
-- Browse products
-- Search products
-- View reviews
-- Contact artisan
+The website combines a mystical forest aesthetic with modern e-commerce functionality and interactive visual effects.
 
-### Registered Users
+---
 
-- Register account
-- Login
-- Manage profile
-- Place orders
-- Track orders
+# Functional Requirements
 
-### Administrator
+## Public Users
 
-- Manage products
-- Manage categories
-- Manage users
-- Manage reviews
-- Manage orders
+### Product Browsing
 
-## Product Categories
+* Browse products by category
+* Search products
+* View featured products
+* View product details
+* View reviews
+* Contact the artisan
 
-- Gnomes
-- Fairies
-- Seasonal Crafts
-- Custom Orders
+### Information Pages
 
-## Social Networks
+* View About Dagna section
+* View reviews and testimonials
+* Access social media links
+* Access contact information
 
-- Facebook
-- Instagram
-- TikTok
+---
 
-## Visual Theme
+## Registered Users
 
-- Mystical forest
-- Fireflies
-- Falling leaves
-- Nature-inspired palette
+### Authentication
 
-## Project Phases
+* Register account
+* Login
+* Logout
+* Recover password
 
-### Phase 1
+### User Profile
 
-Landing page
+* Manage profile information
+* Update account settings
 
-### Phase 2
+### Shopping
 
-Authentication
+* Add products to cart
+* Remove products from cart
+* Modify product quantities
+* Place orders
+* Track orders
 
-### Phase 3
+---
 
-Shopping cart
+## Administrator
 
-### Phase 4
+### Product Management
 
-Payments
+* Create products
+* Edit products
+* Delete products
+* Manage categories
+* Upload product images
 
-### Phase 5
+### User Management
 
-Administration panel
+* Manage users
+* View customer information
 
-## Home Page Layout
+### Review Management
 
-### Navbar
+* Approve reviews
+* Edit reviews
+* Remove reviews
 
-- Logo
-- Home
-- Shop
-- About
-- Reviews
-- Contact
-- Login
-- Register
-- Cart
+### Order Management
 
-### Hero
+* View orders
+* Update order status
+* Manage shipments
 
-- Background image
-- Fireflies
-- Falling leaves
-- Main CTA
+---
 
-### Featured Products
+# Product Categories
 
-- Product placeholders
+* Gnomes
+* Fairies
+* Seasonal Crafts
+* Custom Orders
 
-### About Dagna
+Additional categories may be added in the future.
 
-### Reviews
+---
 
-### Contact
+# Social Networks
 
-### Footer
+* Facebook
+* Instagram
+* TikTok
+
+---
+
+# Technology Stack
+
+## Frontend
+
+* TypeScript
+* Vite
+* HTML5
+* CSS3
+
+## Backend (Planned)
+
+* PHP
+* MySQL
+
+## Hosting (Planned)
+
+* Hostinger
+
+---
+
+# Visual Theme
+
+## Main Theme
+
+* Mystical forest
+* Fantasy-inspired design
+* Artisan-focused presentation
+* Nature-inspired palette
+
+## Color Palette
+
+Primary Color:
+
+* #5CA05D
+
+Secondary Color:
+
+* #7A2400
+
+---
+
+# Visual Effects
+
+## Forest Environment
+
+* Animated mystical forest background
+* Dynamic gradient movement
+* Ambient forest glow
+
+## Fireflies
+
+* Organic movement
+* Independent glow cycles
+* Natural wandering behavior
+
+## Leaves System
+
+* Initial leaf cascade
+* Ambient falling leaves
+* Random wind gust events
+
+## Product Wisps
+
+* Interactive magical wisps
+* Cursor avoidance behavior
+* Energy particle effects
+* Hover interactions
+
+---
+
+# Non-Functional Requirements
+
+## Performance
+
+* Fast page loading
+* Optimized image assets
+* Responsive design
+* Smooth animations
+
+## Accessibility
+
+* Semantic HTML
+* Keyboard navigation
+* Alt text for product images
+* Readable typography
+
+## Compatibility
+
+* Desktop browsers
+* Tablets
+* Mobile devices
+
+## Maintainability
+
+* Component-based architecture
+* Modular TypeScript structure
+* Separated stylesheets
+* Reusable UI components
+
+---
+
+# Project Phases
+
+## Phase 1 – Landing Page
+
+### Implemented
+
+* Responsive navigation
+* Hero section
+* Mystical forest background
+* Fireflies system
+* Leaf system
+* Product showcase
+* Collectible-style product cards
+* Interactive Wisp system
+* About Dagna section
+
+### Pending
+
+* Reviews section
+* Contact section
+* Footer improvements
+
+---
+
+## Phase 2 – Authentication
+
+* Registration
+* Login
+* Password recovery
+* User profiles
+
+---
+
+## Phase 3 – Shopping Cart
+
+* Cart management
+* Product quantities
+* Order creation
+
+---
+
+## Phase 4 – Payments
+
+* Checkout flow
+* Payment integration
+* Order confirmation
+
+---
+
+## Phase 5 – Administration Panel
+
+* Product management
+* Order management
+* Customer management
+* Dashboard and analytics
+
+---
+
+# Home Page Layout
+
+## Navbar
+
+* Logo
+* Home
+* Shop
+* About
+* Reviews
+* Contact
+* Login
+* Register
+* Cart
+
+---
+
+## Hero
+
+* Mystical forest background
+* Fireflies
+* Falling leaves
+* Main CTA
+
+---
+
+## Featured Products
+
+* Collectible-style product cards
+* Product image placeholder
+* Product lore placeholder
+* Product statistics placeholder
+* Interactive Wisp effect
+* Hover animations
+
+---
+
+## About Dagna
+
+* Artisan story
+* Inspiration
+* Handmade process
+* Custom creations
+
+---
+
+## Reviews
+
+* Customer testimonials
+* Product feedback
+
+---
+
+## Contact
+
+* Contact form
+* Email
+* Social media links
+
+---
+
+## Footer
+
+* Navigation links
+* Social media
+* Copyright information

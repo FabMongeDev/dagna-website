@@ -1,10 +1,12 @@
 import { Fireflies } from "./Fireflies";
+import { LeafRain } from "./LeafRain";
 
 export function Hero(): string {
   return `
     <section id="home" class="hero">
       <div class="hero__forest-glow"></div>
       ${Fireflies()}
+      ${LeafRain()}
 
       <div class="hero__content">
         <p class="hero__eyebrow">Artesanías inspiradas en la fantasía</p>

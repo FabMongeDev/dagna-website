@@ -4,6 +4,11 @@ import { Navbar, initNavbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Footer } from "./components/Footer";
 import { initFireflies } from "./components/Fireflies";
+import { initLeafRain } from "./components/LeafRain";
+import { ProductGrid } from "./components/ProductGrid";
+import { initProductCards } from "./components/ProductEffects";
+import { AboutSection  } from "./components/AboutSection";
+
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -16,15 +21,9 @@ app.innerHTML = `
   ${Hero()}
 
   <main>
-    <section id="shop" class="section">
-      <h2>Productos Destacados</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </section>
+    ${ProductGrid()}
 
-    <section id="about" class="section section--dark">
-      <h2>Sobre Dagna</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </section>
+    ${AboutSection()}
 
     <section id="reviews" class="section">
       <h2>Reseñas</h2>
@@ -42,3 +41,5 @@ app.innerHTML = `
 
 initFireflies();
 initNavbar();
+initLeafRain();
+initProductCards();

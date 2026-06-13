@@ -12,16 +12,14 @@ export function ProductCard(product: Product): string {
   return `
     <article class="product-card">
       <div class="product-card__frame">
-        <div class="product-card__image">
-          <div class="product-card__wisp">
-            <span class="product-card__spark product-card__spark--one"></span>
-            <span class="product-card__spark product-card__spark--two"></span>
-            <span class="product-card__spark product-card__spark--three"></span>
-            <span class="product-card__spark product-card__spark--four"></span>
-          </div>
-          
-          <div class="product-card__sparks"></div>
+        <div class="product-card__wisp">
+          <span class="product-card__spark product-card__spark--one"></span>
+          <span class="product-card__spark product-card__spark--two"></span>
+          <span class="product-card__spark product-card__spark--three"></span>
+          <span class="product-card__spark product-card__spark--four"></span>
+        </div>
 
+        <div class="product-card__image">
           <span class="product-card__placeholder">Imagen pendiente</span>
 
           <div class="product-card__nameplate">

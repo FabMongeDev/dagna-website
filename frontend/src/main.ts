@@ -8,7 +8,7 @@ import { initLeafRain } from "./components/LeafRain";
 import { ProductGrid } from "./components/ProductGrid";
 import { initProductCards } from "./components/ProductEffects";
 import { AboutSection  } from "./components/AboutSection";
-
+import { Reviews } from "./components/Reviews";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -25,10 +25,7 @@ app.innerHTML = `
 
     ${AboutSection()}
 
-    <section id="reviews" class="section">
-      <h2>Reseñas</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </section>
+    ${Reviews()}
 
     <section id="contact" class="section section--dark">
       <h2>Contacto</h2>

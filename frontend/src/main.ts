@@ -9,6 +9,7 @@ import { ProductGrid } from "./components/ProductGrid";
 import { initProductCards } from "./components/ProductEffects";
 import { AboutSection  } from "./components/AboutSection";
 import { Reviews } from "./components/Reviews";
+import { ContactSection } from "./components/ContactSection";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -22,15 +23,9 @@ app.innerHTML = `
 
   <main>
     ${ProductGrid()}
-
     ${AboutSection()}
-
     ${Reviews()}
-
-    <section id="contact" class="section section--dark">
-      <h2>Contacto</h2>
-      <p>example@dagna.com</p>
-    </section>
+    ${ContactSection()}
   </main>
 
   ${Footer()}

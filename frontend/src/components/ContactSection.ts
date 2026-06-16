@@ -5,12 +5,12 @@ export function ContactSection(): string {
         <div class="contact-section__info">
           <p class="section__eyebrow">Contacto</p>
 
-          <h2>¿Buscas una creación única?</h2>
+          <h2>¿Buscas una criatura especial?</h2>
 
           <p>
-            Cada gnomo, hada o criatura del bosque puede personalizarse para
-            contar una historia especial. Escribe para consultar disponibilidad,
-            pedidos personalizados o nuevas colecciones.
+            Cada gnomo, hada o habitante del bosque es creado a mano
+            ara contar una historia única. Cuéntanos tu idea y juntos
+            aremos vida a una nueva creación.
           </p>
 
           <div class="contact-section__details">
@@ -46,7 +46,7 @@ export function ContactSection(): string {
           </button>
 
           <p class="contact-form__note">
-            Formulario placeholder. Próximamente conectado con SMTP.
+            Todas las criaturas del bosque son creadas artesanalmente y pueden presentar ligeras variaciones que las hacen únicas.
           </p>
         </form>
       </div>

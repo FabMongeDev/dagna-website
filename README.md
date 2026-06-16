@@ -1,45 +1,116 @@
 # Dagna Website
 
-Dagna Website is a handcrafted e-commerce platform for a local artisan specializing in gnomes, fairies, seasonal decorations, and custom fantasy-themed creations.
+Dagna es una tienda artesanal inspirada en la naturaleza, la fantasía y la magia del bosque.
 
-## Current Features
+El proyecto presenta una experiencia inmersiva con una identidad visual inspirada en bosques encantados, criaturas mágicas y artesanías hechas a mano.
 
-* Responsive navigation bar
-* Desktop, tablet, and mobile layouts
-* Animated mystical forest background
-* Organic firefly system
-* Dynamic leaf system with ambient forest effects
-* Hero section
-* Collectible-style product cards
-* Interactive Wisp AI effect
-* About Dagna section
+## Current Status
+
+Frontend V1 Complete ✅
+
+## Features
+
+### Navigation
+
+- Responsive navigation bar
+- Compact logo for smaller screens
+- Mobile hamburger menu
+
+### Hero Section
+
+- Animated forest atmosphere
+- Organic fireflies system
+- Falling leaves effect
+- Call-to-action buttons
+
+### Featured Products
+
+- Collectible-style product cards
+- Hover interactions
+- Animated magical wisps
+- Product reveal animations
+
+### About Dagna
+
+- Brand story section
+- Nature-inspired presentation
+
+### Reviews
+
+- Customer testimonials
+- Fantasy-themed review cards
+
+### Contact
+
+- Contact form placeholder
+- Social media links
+- Custom order call-to-action
+
+### Footer
+
+- Dynamic copyright year
 
 ## Technology Stack
 
-Frontend:
+### Frontend
 
-* TypeScript
-* Vite
-* HTML5
-* CSS3
+- TypeScript
+- HTML5
+- CSS3
+- Vite
 
-Planned Backend:
+### Future Backend
 
-* PHP
-* MySQL
+- PHP 8+
+- MySQL
+- SMTP Email Integration
 
-Hosting:
+## Planned Features
 
-* Hostinger (planned)
+### Phase 2
 
-## Roadmap
+- User Authentication
+- User Profiles
 
-* Reviews Section
-* Contact Section
-* Footer Improvements
-* Product Catalog Integration
-* User Authentication
-* Shopping Cart
-* Order Management
-* Payment Integration
-* Admin Panel
+### Phase 3
+
+- Shopping Cart
+
+### Phase 4
+
+- Payment Integration
+
+### Phase 5
+
+- Administration Panel
+
+## Hosting
+
+Planned Hosting Environment:
+
+- Hostinger Premium Hosting
+- Custom Domain: dagna.art (planned)
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build production version:
+
+```bash
+npm run build
+```
+
+## License
+
+Private Project

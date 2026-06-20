@@ -28,6 +28,7 @@ frontend/
 │ │ ├── ProductCard.ts
 │ │ ├── ProductEffects.ts
 │ │ └── ProductGrid.ts
+| | └── Reviews.ts
 │ │
 │ ├── pages/
 │ ├── styles/
@@ -39,6 +40,7 @@ frontend/
 │ └── main.ts
 
 ## Visual Systems
+
 Forest Background
 
 Animated gradients simulating a living mystical forest.
@@ -56,10 +58,12 @@ Wisp System
 Interactive magical entity attached to product cards.
 The Wisp reacts to cursor proximity and behaves as a living magical creature.
 
-## Backend
+## Planned Backend
 
-- PHP REST API
+- PHP 8+
+- REST API
 - Session-based authentication
+- SMTP email integration
 
 ## Future Backend
 
@@ -89,7 +93,11 @@ Main entities:
 
 ## Hosting
 
-Hostinger
+Hostinger Premium Hosting
+
+Planned Domain:
+
+- dagna.art
 
 ## Future Enhancements
 
@@ -97,3 +105,36 @@ Hostinger
 - Admin dashboard
 - Inventory management
 - Analytics
+
+## Deployment
+
+Development:
+
+- GitHub
+- Vite Development Server
+
+Production:
+
+- npm run build
+- Upload dist/ contents to public_html/
+
+## Current Status
+
+Frontend V1 Complete ✅
+
+Completed:
+
+- Responsive Navigation
+- Hero Section
+- Fireflies System
+- Leaf System
+- Product Showcase
+- Interactive Wisp System
+- About Section
+- Reviews Section
+- Contact Section
+- Footer
+
+Product Cards
+
+Collectible-style fantasy cards inspired by trading card games with animated magical effects.

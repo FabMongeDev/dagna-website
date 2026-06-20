@@ -114,3 +114,49 @@ npm run build
 ## License
 
 Private Project
+
+## Planned Domain
+
+dagna.art
+
+## Hosting
+
+Planned Hosting Environment:
+
+- Hostinger Premium Hosting
+- Static frontend deployment
+- PHP support
+- MySQL support
+- SMTP support
+
+## Future Architecture
+
+### Backend
+
+- PHP 8+
+- MySQL
+- SMTP Email Integration
+
+### Planned Modules
+
+- Authentication
+- User Profiles
+- Shopping Cart
+- Order Management
+- Administration Panel
+
+## Frontend V1 Milestone
+
+Completed:
+
+- Responsive Navigation
+- Mobile Menu
+- Hero Section
+- Fireflies System
+- Falling Leaves System
+- Product Showcase
+- Interactive Wisp Effects
+- About Section
+- Reviews Section
+- Contact Section
+- Dynamic Footer

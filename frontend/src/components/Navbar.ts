@@ -23,9 +23,9 @@ export function Navbar(): string {
       </nav>
 
       <div class="navbar__actions">
-        <a href="#login" title="Iniciar sesión">👤 <span>Iniciar Sesión</span></a>
+        <a href="#login" title="Iniciar sesión">🧙 <span>Iniciar Sesión</span></a>
         <a href="#register" class="btn btn--small" title="Registrarse">✨ <span>Registrarse</span></a>
-        <a href="#cart" class="cart-link" title="Carrito">🛒 <span>Carrito</span></a>
+        <a href="#cart" class="cart-link" title="Carrito">🧺 <span>Carrito</span></a>
       </div>
 
       <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú">

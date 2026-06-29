@@ -95,30 +95,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
--- =========================
--- Seed Data
--- =========================
-INSERT INTO categories (name, slug, description)
-VALUES (
-        'Gnomos',
-        'gnomos',
-        'Gnomos artesanales inspirados en el bosque.'
-    ),
-    (
-        'Hadas',
-        'hadas',
-        'Hadas y criaturas mágicas hechas a mano.'
-    ),
-    (
-        'Temporada',
-        'temporada',
-        'Creaciones especiales para fechas y temporadas.'
-    ),
-    (
-        'Pedidos Personalizados',
-        'pedidos-personalizados',
-        'Creaciones únicas hechas por encargo.'
-    );
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NULL,

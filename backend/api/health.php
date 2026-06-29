@@ -1,25 +1,15 @@
 <?php
 
-require_once __DIR__ . '/../utils/Database.php';
-
-header('Content-Type: application/json; charset=utf-8');
+require_once __DIR__ . '/../bootstrap.php';
 
 try {
     Database::connect();
 
-    echo json_encode([
-        'status' => 'ok',
+    Response::success([
         'database' => 'connected',
         'message' => 'Dagna API is running',
         'timestamp' => date('c'),
     ]);
 } catch (Throwable $error) {
-    http_response_code(500);
-
-    echo json_encode([
-        'status' => 'error',
-        'database' => 'disconnected',
-        'message' => 'Database connection failed',
-        'timestamp' => date('c'),
-    ]);
+    Response::error('Database connection failed', 500);
 }

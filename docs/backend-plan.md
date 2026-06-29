@@ -8,30 +8,34 @@ The backend should support the current frontend and allow future growth into a c
 
 ---
 
+## Related Documentation
+
+- backend-architecture.md → Architecture, coding standards and security principles.
+
 ## Technology Stack
 
 ### Backend
 
-* PHP 8+
-* REST-style API
-* JSON responses
+- PHP 8+
+- REST-style API
+- JSON responses
 
 ### Database
 
-* MySQL
+- MySQL
 
 ### Email
 
-* SMTP
-* Hostinger Email
+- SMTP
+- Hostinger Email
 
 ### Hosting
 
-* Hostinger Premium Hosting
+- Hostinger Premium Hosting
 
 ### Domain
 
-* dagna.art
+- dagna.art
 
 ---
 
@@ -53,9 +57,9 @@ Contact Form
 
 Purpose:
 
-* Receive contact requests
-* Validate form data
-* Send emails through SMTP
+- Receive contact requests
+- Validate form data
+- Send emails through SMTP
 
 Endpoint:
 
@@ -73,8 +77,8 @@ Product Catalog
 
 Purpose:
 
-* Replace frontend placeholders
-* Store real artisan products
+- Replace frontend placeholders
+- Store real artisan products
 
 Endpoints:
 
@@ -96,8 +100,8 @@ Reviews
 
 Purpose:
 
-* Replace placeholder reviews
-* Display real customer feedback
+- Replace placeholder reviews
+- Display real customer feedback
 
 Endpoints:
 
@@ -117,9 +121,9 @@ Authentication
 
 Purpose:
 
-* User registration
-* Login
-* Session management
+- User registration
+- Login
+- Session management
 
 Endpoints:
 
@@ -143,8 +147,8 @@ Orders
 
 Purpose:
 
-* Store customer purchases
-* Track order status
+- Store customer purchases
+- Track order status
 
 Status:
 
@@ -158,9 +162,9 @@ Shopping Cart
 
 Purpose:
 
-* Add products to cart
-* Modify quantities
-* Checkout preparation
+- Add products to cart
+- Modify quantities
+- Checkout preparation
 
 Status:
 
@@ -174,10 +178,10 @@ Administration Panel
 
 Purpose:
 
-* Manage products
-* Manage categories
-* Manage reviews
-* Manage orders
+- Manage products
+- Manage categories
+- Manage reviews
+- Manage orders
 
 Status:
 
@@ -189,24 +193,24 @@ Future
 
 Planned tables:
 
-* users
-* products
-* categories
-* reviews
-* contact_messages
-* orders
-* order_items
+- users
+- products
+- categories
+- reviews
+- contact_messages
+- orders
+- order_items
 
 ---
 
 ## Security Requirements
 
-* Use prepared statements
-* Validate all user input
-* Escape output when needed
-* Hash passwords using password_hash()
-* Store sensitive credentials outside public_html
-* Never expose database credentials
+- Use prepared statements
+- Validate all user input
+- Escape output when needed
+- Hash passwords using password_hash()
+- Store sensitive credentials outside public_html
+- Never expose database credentials
 
 ---
 

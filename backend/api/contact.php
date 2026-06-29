@@ -1,47 +1,28 @@
 <?php
 
-require_once __DIR__ . '/../utils/Database.php';
+require_once __DIR__ . '/../bootstrap.php';
 
-header('Content-Type: application/json; charset=utf-8');
+use Dagna\Utils\Database;
+use Dagna\Utils\Response;
+use Dagna\Utils\Validator;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Method not allowed',
-    ]);
-
-    exit;
+    Response::error('Method not allowed', 405);
 }
 
 $input = json_decode(file_get_contents('php://input'), true);
 
-$name = trim($input['name'] ?? '');
-$email = trim($input['email'] ?? '');
-$message = trim($input['message'] ?? '');
-
-if ($name === '' || $email === '' || $message === '') {
-    http_response_code(400);
-
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Name, email, and message are required',
-    ]);
-
-    exit;
+if (!is_array($input)) {
+    Response::error('Invalid JSON body', 400);
 }
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
+$validation = Validator::contact($input);
 
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Invalid email address',
-    ]);
-
-    exit;
+if (!$validation->isValid()) {
+    Response::validationError($validation->getErrors());
 }
+
+$data = $validation->getData();
 
 try {
     $connection = Database::connect();
@@ -52,22 +33,14 @@ try {
     );
 
     $statement->execute([
-        ':name' => $name,
-        ':email' => $email,
-        ':message' => $message,
+        ':name' => $data['name'],
+        ':email' => $data['email'],
+        ':message' => $data['message'],
     ]);
 
-    http_response_code(201);
-
-    echo json_encode([
-        'status' => 'success',
-        'message' => 'Contact message saved successfully',
-    ]);
+    Response::success([
+        'message' => 'Contact message received',
+    ], 201);
 } catch (Throwable $error) {
-    http_response_code(500);
-
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Could not save contact message',
-    ]);
+    Response::error('Could not save contact message', 500);
 }

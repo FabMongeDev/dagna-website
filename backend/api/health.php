@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/../bootstrap.php';
 
+use Dagna\Utils\Database;
+use Dagna\Utils\Response;
+
 try {
     Database::connect();
 

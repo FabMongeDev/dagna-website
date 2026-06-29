@@ -13,6 +13,8 @@
 
 declare(strict_types=1);
 
+namespace Dagna\Utils;
+
 class Response
 {
     /**
@@ -49,5 +51,20 @@ class Response
             'status' => 'error',
             'message' => $message,
         ], $statusCode);
+    }
+
+    /**
+     * Sends a validation error JSON response.
+     *
+     * Validation errors are returned as codes so the frontend can translate
+     * them into Spanish user-facing messages.
+     */
+    public static function validationError(array $errors): void
+    {
+        self::json([
+            'status' => 'error',
+            'code' => 'VALIDATION_ERROR',
+            'errors' => $errors,
+        ], 422);
     }
 }

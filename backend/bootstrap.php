@@ -49,3 +49,6 @@ header('Content-Type: application/json; charset=utf-8');
  */
 require_once __DIR__ . '/utils/Database.php';
 require_once __DIR__ . '/utils/Response.php';
+require_once __DIR__ . '/utils/Validator.php';
+require_once __DIR__ . '/utils/ValidationReport.php';
+require_once __DIR__ . '/utils/Validator.php';

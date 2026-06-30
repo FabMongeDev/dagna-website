@@ -10,6 +10,7 @@ import { initProductCards } from "./components/ProductEffects";
 import { AboutSection  } from "./components/AboutSection";
 import { Reviews } from "./components/Reviews";
 import { ContactSection } from "./components/ContactSection";
+import { initContactForm } from "./components/ContactForm";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -35,3 +36,4 @@ initFireflies();
 initNavbar();
 initLeafRain();
 initProductCards();
+initContactForm();

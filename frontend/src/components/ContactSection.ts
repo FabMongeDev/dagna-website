@@ -10,7 +10,7 @@ export function ContactSection(): string {
           <p>
             Cada gnomo, hada o habitante del bosque es creado a mano
             ara contar una historia única. Cuéntanos tu idea y juntos
-            aremos vida a una nueva creación.
+            haremos vida a una nueva creación.
           </p>
 
           <div class="contact-section__details">
@@ -25,7 +25,7 @@ export function ContactSection(): string {
           </div>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <label>
             Nombre
             <input type="text" name="name" placeholder="Tu nombre" />
@@ -41,9 +41,11 @@ export function ContactSection(): string {
             <textarea name="message" rows="5" placeholder="Cuéntanos qué criatura estás buscando..."></textarea>
           </label>
 
-          <button type="button" class="btn">
+          <button type="submit" class="btn">
             Enviar Mensaje
           </button>
+
+          <p class="contact-form__status" id="contactFormStatus"></p>
 
           <p class="contact-form__note">
             Todas las criaturas del bosque son creadas artesanalmente y pueden presentar ligeras variaciones que las hacen únicas.

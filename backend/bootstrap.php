@@ -16,6 +16,11 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->safeLoad();
+
 /**
  * Application timezone.
  *
@@ -78,3 +83,5 @@ require_once __DIR__ . '/utils/Response.php';
 require_once __DIR__ . '/utils/Validator.php';
 require_once __DIR__ . '/utils/ValidationReport.php';
 require_once __DIR__ . '/utils/Validator.php';
+require_once __DIR__ . '/services/Mailer.php';
+require_once __DIR__ . '/../vendor/autoload.php';

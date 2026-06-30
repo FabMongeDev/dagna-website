@@ -5,6 +5,7 @@ require_once __DIR__ . '/../bootstrap.php';
 use Dagna\Utils\Database;
 use Dagna\Utils\Response;
 use Dagna\Utils\Validator;
+use Dagna\Services\Mailer;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     Response::error('Method not allowed', 405);
@@ -36,6 +37,12 @@ try {
         ':name' => $data['name'],
         ':email' => $data['email'],
         ':message' => $data['message'],
+    ]);
+
+    Mailer::sendContactNotification([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'message' => $data['message'],
     ]);
 
     Response::success([

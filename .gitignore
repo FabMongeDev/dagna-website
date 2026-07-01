@@ -4,6 +4,5 @@ frontend/dist/
 *.env
 !.env.example
 backend/config/local.php
-backend/config/database.php
 /vendor/
 /vendor/

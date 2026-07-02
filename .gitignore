@@ -5,4 +5,3 @@ frontend/dist/
 !.env.example
 backend/config/local.php
 /vendor/
-/vendor/

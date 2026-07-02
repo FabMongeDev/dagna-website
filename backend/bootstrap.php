@@ -89,3 +89,4 @@ require_once __DIR__ . '/repositories/UserRepository.php';
 require_once __DIR__ . '/repositories/TokenRepository.php';
 require_once __DIR__ . '/services/TokenService.php';
 require_once __DIR__ . '/services/RateLimiter.php';
+require_once __DIR__ . '/services/BotKiller.php';

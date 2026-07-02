@@ -88,3 +88,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/repositories/UserRepository.php';
 require_once __DIR__ . '/repositories/TokenRepository.php';
 require_once __DIR__ . '/services/TokenService.php';
+require_once __DIR__ . '/services/RateLimiter.php';

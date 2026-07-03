@@ -19,19 +19,55 @@ class BotKiller
      * This service does not decide the HTTP response. It only reports whether
      * the submission looks suspicious.
      */
+    private const MIN_FILL_SECONDS = 2;
+
     public function inspect(array $payload, array $honeypotFields = self::DEFAULT_HONEYPOT_FIELDS): array
+    {
+        $honeypotResult = $this->checkHoneypot($payload, $honeypotFields);
+        if ($honeypotResult !== null) {
+            return $honeypotResult;
+        }
+
+        $timeTrapResult = $this->checkTimeTrap($payload);
+        if ($timeTrapResult !== null) {
+            return $timeTrapResult;
+        }
+
+        return $this->passed();
+    }
+
+    private function checkHoneypot(array $payload, array $honeypotFields): ?array
     {
         foreach ($honeypotFields as $fieldName) {
             if (!array_key_exists($fieldName, $payload)) {
                 continue;
             }
-
             if ($this->isFilled($payload[$fieldName])) {
                 return $this->failed('honeypot_triggered', $fieldName);
             }
         }
+        return null;
+    }
 
-        return $this->passed();
+    private function checkTimeTrap(array $payload): ?array
+    {
+        if (!array_key_exists('formRenderedAt', $payload)) {
+            return $this->failed('time_trap_missing', 'formRenderedAt');
+        }
+
+        $renderedAt = $payload['formRenderedAt'];
+        if (!is_numeric($renderedAt)) {
+            return $this->failed('time_trap_invalid', 'formRenderedAt');
+        }
+
+        $nowMs = (int) (microtime(true) * 1000);
+        $elapsedSeconds = ($nowMs - (int) $renderedAt) / 1000;
+
+        if ($elapsedSeconds < self::MIN_FILL_SECONDS) {
+            return $this->failed('time_trap_too_fast', 'formRenderedAt');
+        }
+
+        return null;
     }
 
     /**

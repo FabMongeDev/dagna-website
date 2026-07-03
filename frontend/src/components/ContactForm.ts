@@ -45,6 +45,8 @@ export function initContactForm(): void {
     return;
   }
 
+  const formRenderedAt = Date.now();
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -54,6 +56,7 @@ export function initContactForm(): void {
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
       message: String(formData.get("message") ?? ""),
+      formRenderedAt,
     };
 
     status.textContent = "Enviando mensaje...";

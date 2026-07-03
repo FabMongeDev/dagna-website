@@ -6,12 +6,20 @@ use Dagna\Utils\Database;
 use Dagna\Utils\Response;
 use Dagna\Utils\Validator;
 use Dagna\Services\Mailer;
+use Dagna\Services\BotKiller;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     Response::error('Method not allowed', 405);
 }
 
 $input = json_decode(file_get_contents('php://input'), true);
+
+$botKiller = new BotKiller();
+$botCheck = $botKiller->inspect($input);
+
+if (!$botCheck['passed']) {
+    Response::error('Could not process your message', 422);
+}
 
 if (!is_array($input)) {
     Response::error('Invalid JSON body', 400);

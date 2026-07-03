@@ -8,6 +8,13 @@ El proyecto presenta una experiencia inmersiva con una identidad visual inspirad
 
 Frontend V1 Complete ✅
 
+Backend in progress:
+
+- Contact endpoint (validation, bot protection, email notifications) ✅
+- Rate limiting service ✅
+- Auth database schema and token infrastructure ✅
+- Authentication endpoints (login, register, email verification, password reset) 🚧
+
 ## Features
 
 ### Navigation
@@ -42,7 +49,10 @@ Frontend V1 Complete ✅
 
 ### Contact
 
-- Contact form placeholder
+- Functional contact form with backend integration
+- Server-side validation (name, email, message)
+- Bot/spam protection (dual honeypot fields + time trap)
+- Email notifications via SMTP
 - Social media links
 - Custom order call-to-action
 
@@ -59,11 +69,12 @@ Frontend V1 Complete ✅
 - CSS3
 - Vite
 
-### Future Backend
+### Backend
 
 - PHP 8+
 - MySQL
-- SMTP Email Integration
+- Composer
+- SMTP Email Integration (PHPMailer)
 
 ## Planned Features
 
@@ -93,6 +104,8 @@ Planned Hosting Environment:
 
 ## Development
 
+### Frontend
+
 Install dependencies:
 
 ```bash
@@ -109,6 +122,22 @@ Build production version:
 
 ```bash
 npm run build
+```
+
+### Backend
+
+Install dependencies:
+
+```bash
+composer install
+```
+
+Copy `.env.example` to `.env` and fill in your local database and SMTP credentials.
+
+Run the PHP development server (from the project root):
+
+```bash
+php -S 127.0.0.1:8000 -t backend
 ```
 
 ## License

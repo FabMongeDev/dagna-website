@@ -60,6 +60,7 @@ Purpose:
 - Receive contact requests
 - Validate form data
 - Send emails through SMTP
+- Protect against bots and spam (BotKiller: honeypot fields + time trap)
 
 Endpoint:
 
@@ -67,7 +68,7 @@ POST /api/contact
 
 Status:
 
-Planned
+Completed
 
 ---
 
@@ -137,7 +138,16 @@ GET /api/auth/me
 
 Status:
 
-Future
+In Progress
+
+Notes:
+
+- Database migration applied (002_auth_v1.sql)
+- Token infrastructure built (TokenService, TokenRepository)
+- User data layer built (UserRepository)
+- Rate limiting service built (RateLimiter)
+- POST /api/auth/login exists but is not yet using RateLimiter or UserRepository; needs rework
+- Remaining endpoints (register, logout, me, email verification, password reset) not yet built
 
 ---
 
@@ -231,8 +241,14 @@ Production:
 
 ## Current Phase
 
-Phase 2 Started ✅
+Phase 2 In Progress 🚧
+
+Completed:
+
+- Contact Form (Phase 2.1)
+- Auth database design and migration
+- Token and rate limiting infrastructure
 
 Next Step:
 
-Database Design
+Rework login endpoint to use RateLimiter and UserRepository, then build the remaining auth endpoints (register, email verification, password reset).

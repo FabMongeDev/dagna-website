@@ -160,8 +160,10 @@ Current architecture:
 backend/
 
 api/
+  auth/
 config/
-middleware/
+repositories/
+scripts/
 services/
 templates/
 utils/
@@ -176,6 +178,11 @@ Important components:
 - Response
 - Database
 - Mailer
+- BotKiller (bot/spam detection: honeypot fields + time trap)
+- RateLimiter (throttles repeated actions per IP/email/session)
+- TokenService (secure token generation and hashing)
+- TokenRepository
+- UserRepository
 
 ---
 
@@ -269,20 +276,25 @@ Completed
 - Email Service
 - SMTP integration
 - Environment configuration
+- Rate Limiting (RateLimiter service, transactional, tested)
+- Bot Protection on Contact (BotKiller: dual honeypot + time trap, wired end-to-end)
+- Auth database migration (002_auth_v1.sql)
+- Token infrastructure (TokenService, TokenRepository)
+- User repository (UserRepository)
 
 In Progress
 
-- Backend improvements
-- Authentication planning
+- Authentication endpoints
+  - login.php exists but does not yet use RateLimiter or UserRepository; needs rework before it meets project security standards
+  - register, email verification, and password reset endpoints not yet built
 
 Upcoming
 
-- User Registration
-- Login
-- Email Verification
-- Password Recovery
-- BotKiller
-- Rate Limiting
+- Secure login endpoint (rewritten to use UserRepository + RateLimiter)
+- User Registration endpoint
+- Email Verification flow
+- Password Recovery flow
+- BotKiller on other forms (Register, Reviews) once those forms exist
 - Products API
 - Admin Panel
 - Orders
@@ -314,6 +326,7 @@ The goal is to build a secure, maintainable and scalable platform capable of sup
 Every design decision should move the project closer to that goal.# Architectural Decisions
 
 ## ADR-001
+
 Use PHPMailer instead of PHP mail().
 
 Reason:
@@ -322,6 +335,7 @@ Reliability, SMTP support and production readiness.
 ---
 
 ## ADR-002
+
 Use .env for secrets.
 
 Reason:
@@ -330,6 +344,7 @@ Prevent credentials from being committed to Git.
 ---
 
 ## ADR-003
+
 Use services to encapsulate business logic.
 
 Reason:

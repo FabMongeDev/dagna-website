@@ -52,13 +52,15 @@ Every architectural decision should support these principles.
 backend/
 
 api/
+auth/
 Public API endpoints.
 
 config/
 Application configuration.
 
-middleware/
-Authentication, authorization and request protection.
+repositories/
+
+scripts/
 
 services/
 Business logic.

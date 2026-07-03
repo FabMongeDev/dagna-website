@@ -56,6 +56,8 @@ export function initContactForm(): void {
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
       message: String(formData.get("message") ?? ""),
+      website: String(formData.get("website") ?? ""),
+      company: String(formData.get("company") ?? ""),
       formRenderedAt,
     };
 

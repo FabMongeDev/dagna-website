@@ -26,6 +26,11 @@ export function ContactSection(): string {
         </div>
 
         <form class="contact-form" id="contactForm">
+          <label class="contact-form__honeypot-clip" aria-hidden="true">
+            Sitio web
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+
           <label>
             Nombre
             <input type="text" name="name" placeholder="Tu nombre" />
@@ -34,6 +39,11 @@ export function ContactSection(): string {
           <label>
             Correo
             <input type="email" name="email" placeholder="tu@email.com" />
+          </label>
+
+          <label class="contact-form__honeypot-hidden" aria-hidden="true">
+            Empresa
+            <input type="text" name="company" tabindex="-1" autocomplete="off" />
           </label>
 
           <label>

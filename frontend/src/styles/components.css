@@ -876,6 +876,22 @@
   font-size: 0.85rem;
 }
 
+.contact-form__honeypot-clip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-form .contact-form__honeypot-hidden {
+  display: none;
+}
+
 @media (max-width: 850px) {
   .contact-section__content {
     grid-template-columns: 1fr;

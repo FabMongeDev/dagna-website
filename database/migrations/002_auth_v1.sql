@@ -15,24 +15,21 @@
 --   into email_verified_at / status.
 -- - This migration is intended to run once after schema.sql.
 -- ==========================================
-
-USE dagna_db;
-
+-- USE dagna_db; -- Uncomment this line if working locally
 -- =========================
 -- Users Auth Fields
 -- =========================
-
 ALTER TABLE users
-    ADD COLUMN email_verified_at TIMESTAMP NULL AFTER email_verified,
+ADD COLUMN email_verified_at TIMESTAMP NULL
+AFTER email_verified,
     ADD COLUMN status ENUM(
         'pending_verification',
         'active',
         'suspended'
-    ) NOT NULL DEFAULT 'pending_verification' AFTER email_verified_at;
-
+    ) NOT NULL DEFAULT 'pending_verification'
+AFTER email_verified_at;
 UPDATE users
-SET
-    email_verified_at = CASE
+SET email_verified_at = CASE
         WHEN email_verified = TRUE THEN updated_at
         ELSE NULL
     END,
@@ -41,17 +38,11 @@ SET
         WHEN email_verified = TRUE THEN 'active'
         ELSE 'pending_verification'
     END;
-
-CREATE INDEX idx_users_email_status
-    ON users (email, status);
-
-CREATE INDEX idx_users_role_status
-    ON users (role, status);
-
+CREATE INDEX idx_users_email_status ON users (email, status);
+CREATE INDEX idx_users_role_status ON users (role, status);
 -- =========================
 -- Email Verification Tokens
 -- =========================
-
 CREATE TABLE email_verification_tokens (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -59,27 +50,14 @@ CREATE TABLE email_verification_tokens (
     expires_at TIMESTAMP NOT NULL,
     used_at TIMESTAMP NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    CONSTRAINT fk_email_verification_tokens_user
-        FOREIGN KEY (user_id)
-        REFERENCES users(id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE,
-
-    CONSTRAINT uq_email_verification_token_hash
-        UNIQUE (token_hash)
+    CONSTRAINT fk_email_verification_tokens_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT uq_email_verification_token_hash UNIQUE (token_hash)
 );
-
-CREATE INDEX idx_email_verification_tokens_user_id
-    ON email_verification_tokens (user_id);
-
-CREATE INDEX idx_email_verification_tokens_lookup
-    ON email_verification_tokens (token_hash, expires_at, used_at);
-
+CREATE INDEX idx_email_verification_tokens_user_id ON email_verification_tokens (user_id);
+CREATE INDEX idx_email_verification_tokens_lookup ON email_verification_tokens (token_hash, expires_at, used_at);
 -- =========================
 -- Password Reset Tokens
 -- =========================
-
 CREATE TABLE password_reset_tokens (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -88,27 +66,14 @@ CREATE TABLE password_reset_tokens (
     expires_at TIMESTAMP NOT NULL,
     used_at TIMESTAMP NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    CONSTRAINT fk_password_reset_tokens_user
-        FOREIGN KEY (user_id)
-        REFERENCES users(id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE,
-
-    CONSTRAINT uq_password_reset_token_hash
-        UNIQUE (token_hash)
+    CONSTRAINT fk_password_reset_tokens_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT uq_password_reset_token_hash UNIQUE (token_hash)
 );
-
-CREATE INDEX idx_password_reset_tokens_user_id
-    ON password_reset_tokens (user_id);
-
-CREATE INDEX idx_password_reset_tokens_lookup
-    ON password_reset_tokens (token_hash, expires_at, used_at);
-
+CREATE INDEX idx_password_reset_tokens_user_id ON password_reset_tokens (user_id);
+CREATE INDEX idx_password_reset_tokens_lookup ON password_reset_tokens (token_hash, expires_at, used_at);
 -- =========================
 -- Rate Limits
 -- =========================
-
 CREATE TABLE rate_limits (
     id INT AUTO_INCREMENT PRIMARY KEY,
     action VARCHAR(80) NOT NULL,
@@ -124,13 +89,7 @@ CREATE TABLE rate_limits (
     locked_until TIMESTAMP NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-
-    CONSTRAINT uq_rate_limits_action_identifier
-        UNIQUE (action, identifier_type, identifier_hash)
+    CONSTRAINT uq_rate_limits_action_identifier UNIQUE (action, identifier_type, identifier_hash)
 );
-
-CREATE INDEX idx_rate_limits_lookup
-    ON rate_limits (action, identifier_type, identifier_hash);
-
-CREATE INDEX idx_rate_limits_locked_until
-    ON rate_limits (locked_until);
+CREATE INDEX idx_rate_limits_lookup ON rate_limits (action, identifier_type, identifier_hash);
+CREATE INDEX idx_rate_limits_locked_until ON rate_limits (locked_until);

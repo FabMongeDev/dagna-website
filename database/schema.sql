@@ -1,8 +1,10 @@
 -- Dagna Database Schema
 -- Version: 1.0
 -- Phase 2: Backend Foundation
-CREATE DATABASE IF NOT EXISTS dagna_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE dagna_db;
+-- ==== Un-Comment next 2 lines if working locally =======================================
+-- CREATE DATABASE IF NOT EXISTS dagna_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE dagna_db;
+-- ========================================================================================
 -- =========================
 -- Categories
 -- =========================

@@ -14,14 +14,13 @@ export function ContactSection(): string {
           </p>
 
           <div class="contact-section__details">
-            <a href="mailto:contacto@dagna.art">contacto@dagna.art</a>
-            <span>San José, Costa Rica</span>
+            <a href="mailto:contact@dagna.art">contact@dagna.art</a>
+            <span>San José, Costa Rica 🇨🇷</span>
           </div>
 
           <div class="contact-section__socials">
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="TikTok">TikTok</a>
+            <a href="https://www.facebook.com/ciudadsafari" aria-label="Facebook">Facebook</a>
+            <a href="https://www.instagram.com/dagnacr/" aria-label="Instagram">Instagram</a>
           </div>
         </div>
 

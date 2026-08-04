@@ -22,12 +22,6 @@ export function Navbar(): string {
         <a href="#contact">Contacto</a>
       </nav>
 
-      <div class="navbar__actions">
-        <a href="#login" title="Iniciar sesión">🧙 <span>Iniciar Sesión</span></a>
-        <a href="#register" class="btn btn--small" title="Registrarse">✨ <span>Registrarse</span></a>
-        <a href="#cart" class="cart-link" title="Carrito">🧺 <span>Carrito</span></a>
-      </div>
-
       <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú">
         ☰
       </button>
@@ -38,9 +32,6 @@ export function Navbar(): string {
         <a href="#about">Sobre Dagna</a>
         <a href="#reviews">Reseñas</a>
         <a href="#contact">Contacto</a>
-        <a href="#login">Iniciar Sesión</a>
-        <a href="#register">Registrarse</a>
-        <a href="#cart">Carrito</a>
       </div>
     </header>
   `;

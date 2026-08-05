@@ -64,7 +64,7 @@ export function initContactForm(): void {
     status.textContent = "Enviando mensaje...";
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/contact.php", {
+      const response = await fetch("/api/contact.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

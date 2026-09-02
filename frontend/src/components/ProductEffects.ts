@@ -24,6 +24,16 @@ export function initProductCards(): void {
 
     if (!image || !wisp) return;
 
+    const protectedArea = card.querySelector<HTMLElement>(".product-card__image");
+
+    protectedArea?.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
+
+    protectedArea?.addEventListener("dragstart", (event) => {
+      event.preventDefault();
+    });
+
     const rect = image.getBoundingClientRect();
 
     const state: WispState = {

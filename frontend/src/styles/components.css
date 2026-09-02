@@ -109,6 +109,10 @@
   overflow: hidden;
   border-radius: 1.05rem;
 
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;  
+
   display: grid;
   place-items: center;
 

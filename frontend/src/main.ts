@@ -11,6 +11,7 @@ import { AboutSection  } from "./components/AboutSection";
 import { Reviews } from "./components/Reviews";
 import { ContactSection } from "./components/ContactSection";
 import { initContactForm } from "./components/ContactForm";
+import { ScreenshotGuardian, initScreenshotGuardian } from "./components/ScreenshotGuardian";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -30,6 +31,7 @@ app.innerHTML = `
   </main>
 
   ${Footer()}
+  ${ScreenshotGuardian()}
 `;
 
 initFireflies();
@@ -37,3 +39,4 @@ initNavbar();
 initLeafRain();
 initProductCards();
 initContactForm();
+initScreenshotGuardian();

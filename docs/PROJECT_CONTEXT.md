@@ -265,6 +265,8 @@ Please try again in a few minutes."
 
 # Current Status
 
+**Live at https://dagna.art** ✅ (launched with reduced scope while remaining features are built)
+
 Completed
 
 - Backend bootstrap
@@ -278,9 +280,19 @@ Completed
 - Environment configuration
 - Rate Limiting (RateLimiter service, transactional, tested)
 - Bot Protection on Contact (BotKiller: dual honeypot + time trap, wired end-to-end)
+- Basic drag/right-click protection on product images
 - Auth database migration (002_auth_v1.sql)
 - Token infrastructure (TokenService, TokenRepository)
 - User repository (UserRepository)
+- Production deployment to Hostinger (see backend-plan.md → Deployment Strategy for the real folder layout and gotchas)
+- Production database, SMTP, and .env fully configured and verified end-to-end
+
+Launch scope reductions (intentional, temporary)
+
+- Login / Register / Cart hidden from navbar — not usable yet, UI only
+- `login.php` blocked via `.htaccess` in production until it uses RateLimiter + UserRepository
+- Reviews section stripped of placeholder cards; shows an invitation only, no submission form yet (submission requires Auth, per architecture decision, so it waits until Auth is complete)
+- Products remain hardcoded placeholder content in `ProductGrid.ts`, pending real photos/copy from the client
 
 In Progress
 
@@ -294,7 +306,9 @@ Upcoming
 - User Registration endpoint
 - Email Verification flow
 - Password Recovery flow
-- BotKiller on other forms (Register, Reviews) once those forms exist
+- Reviews submission form (stars 1-5, name, comment) — blocked on Auth being complete
+- Real product content (photos + copy) + image watermarking
+- BotKiller on Reviews form once built
 - Products API
 - Admin Panel
 - Orders

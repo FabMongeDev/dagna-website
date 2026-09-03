@@ -230,25 +230,63 @@ Development:
 
 GitHub
 
-Production:
+Production (Hostinger):
 
-1. Build frontend using Vite
-2. Upload frontend dist files to public_html
-3. Deploy PHP API under public_html/api
-4. Store sensitive configuration files outside public_html
+Actual folder layout used (confirmed working):
+
+```text
+/home/[account]/domains/dagna.art/
+├── public_html/              ← Apache-served, public
+│   ├── index.html + assets/  ← Vite build output (npm run build → dist/)
+│   └── api/
+│       ├── contact.php       ← one-line bridge file, requires the real file in dagna-core
+│       └── auth/
+│           ├── login.php     ← one-line bridge file
+│           └── .htaccess     ← Require all denied (until login is production-ready)
+└── dagna-core/                ← NOT web-accessible, sibling to public_html
+    ├── backend/                ← exact mirror of the repo's backend/ folder
+    ├── vendor/                 ← composer install output
+    ├── composer.json / .lock
+    └── .env                    ← production values, never committed, created directly on server
+```
+
+Bridge files work with zero code changes because PHP's `__DIR__` always resolves to the file's own real location — a one-line `require __DIR__ . '/../../dagna-core/backend/api/contact.php';` is enough; the real file's own relative requires (e.g. `require __DIR__ . '/../bootstrap.php'`) keep working unmodified.
+
+Known gotchas (Hostinger + this account specifically):
+
+1. **PHP CLI vs web version mismatch.** `php` on SSH defaults to 7.2 (too old for this codebase's syntax). The site itself runs the version selected in hPanel (PHP Configuration → currently 8.3). For any CLI testing/debugging, use the versioned binary directly: `/opt/alt/php83/usr/bin/php` (CloudLinux path; confirm with `find /opt/alt -maxdepth 1 -iname "php*"` if the version changes).
+2. **SMTP host: use `smtp.titan.email`, not `smtp.hostinger.com`.** This account's email is Titan-powered; `smtp.hostinger.com` returns `535 authentication failed` even with the correct password, despite being Hostinger's officially documented host. `smtp.titan.email` works.
+3. **`.env` values need double quotes if they contain special characters** (`#` especially — phpdotenv treats an unquoted `#` as a comment and truncates the rest of the value). Always quote passwords: `DB_PASSWORD="..."`.
+4. **`schema.sql` and migration files must not include `CREATE DATABASE`/`USE` statements** when importing via phpMyAdmin — the import already runs inside the correct database context, and Hostinger's prefixed database names (e.g. `u123_dagna_db`) don't match a literal `dagna_db` reference anyway. These lines are commented out in the repo now, with a note to uncomment for local use.
+5. **`display_errors` is conditional on `APP_ENV`.** Production `.env` has `APP_ENV=production`, which silences detailed PHP errors from visitors (logged instead). For CLI debugging in production, override per-command: `APP_ENV=development /opt/alt/php83/usr/bin/php ...`.
+
+Deploy steps for a frontend-only change:
+
+```bash
+cd frontend
+npm run build
+rsync -avz -e "ssh -p [port]" dist/ [user]@[host]:/home/[account]/domains/dagna.art/public_html/
+```
+
+Deploy steps for a backend change:
+
+```bash
+rsync -avz -e "ssh -p [port]" backend/ [user]@[host]:/home/[account]/domains/dagna.art/dagna-core/backend/
+```
 
 ---
 
 ## Current Phase
 
-Phase 2 In Progress 🚧
+Phase 2 In Progress 🚧 — **Site live at dagna.art with reduced launch scope**
 
 Completed:
 
-- Contact Form (Phase 2.1)
+- Contact Form (Phase 2.1), including production deployment and verified email delivery
 - Auth database design and migration
 - Token and rate limiting infrastructure
+- Production deployment (Hostinger, see Deployment Strategy above)
 
 Next Step:
 
-Rework login endpoint to use RateLimiter and UserRepository, then build the remaining auth endpoints (register, email verification, password reset).
+Rework login endpoint to use RateLimiter and UserRepository, then build the remaining auth endpoints (register, email verification, password reset) — this unblocks the Reviews submission form, which is intentionally on hold until Auth is real.

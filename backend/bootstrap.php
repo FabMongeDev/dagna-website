@@ -35,8 +35,11 @@ date_default_timezone_set('America/Costa_Rica');
  * For now, errors are displayed to make development faster.
  * In production, display_errors must be disabled and errors should be logged.
  */
+$isProduction = ($_ENV['APP_ENV'] ?? 'development') === 'production';
+
 error_reporting(E_ALL);
-ini_set('display_errors', '1');
+ini_set('display_errors', $isProduction ? '0' : '1');
+ini_set('log_errors', '1');
 
 /**
  * Default JSON response header.

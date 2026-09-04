@@ -193,6 +193,8 @@ Purpose:
 - Manage reviews
 - Manage orders
 
+See docs/admin-panel-plan.md for detailed requirements (roles, reservation flow, moderation).
+
 Status:
 
 Future

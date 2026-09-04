@@ -310,7 +310,7 @@ Upcoming
 - Real product content (photos + copy) + image watermarking
 - BotKiller on Reviews form once built
 - Products API
-- Admin Panel
+- Admin Panel (see docs/admin-panel-plan.md for detailed requirements)
 - Orders
 - Payments
 

@@ -5,7 +5,7 @@ const products: Product[] = [
     name: "Augusto Sotavento",
     category: "Duende del Viento",
     age: "132 años",
-    height: "27 cm",
+    height: "36 cm",
     origin: "Laderas donde el viento nunca deja de contar historias",
     specialPower: "Traerte una brisa de calma cuando todo se siente apresurado.",
     description:
@@ -16,7 +16,7 @@ const products: Product[] = [
     name: "Evaristo Ramaseca",
     category: "Duende de Otoño",
     age: "178 años",
-    height: "29 cm",
+    height: "32 cm",
     origin: "Bosques dorados de temporada",
     specialPower: "Convertir una tarde gris en una taza de café con paz.",
     description:
@@ -26,8 +26,8 @@ const products: Product[] = [
   {
     name: "Fortunato Hojaverde",
     category: "Duende Artesano",
-    age: "95 años",
-    height: "25 cm",
+    age: "150 años",
+    height: "28 cm",
     origin: "El primer brote de primavera en un jardín olvidado",
     specialPower: "Arreglar lo que parecía imposible de reparar, con paciencia y un poco de ingenio.",
     description:
@@ -38,7 +38,7 @@ const products: Product[] = [
     name: "Tobías Matute",
     category: "Duende Trotamundos",
     age: "58 años",
-    height: "22 cm",
+    height: "34 cm",
     origin: "El primer rayo de sol que cruza la ventana",
     specialPower: "Traer siempre algo curioso escondido en su bolsa — nunca sabes qué.",
     description:
@@ -48,8 +48,8 @@ const products: Product[] = [
   {
     name: "Wilfrido Gotadelluvia",
     category: "Duende de la Lluvia",
-    age: "140 años",
-    height: "28 cm",
+    age: "98 años",
+    height: "34 cm",
     origin: "Charcos que reflejan el cielo después de la tormenta",
     specialPower: "Enseñarte a encontrar belleza incluso en los días grises.",
     description:

@@ -35,17 +35,6 @@ const products: Product[] = [
     image: "/products/fortunato-hojaverde.jpg",
   },
   {
-    name: "Merlin Tallofuerte",
-    category: "Duende Guardián",
-    age: "210 años",
-    height: "33 cm",
-    origin: "Raíces que sostienen árboles centenarios",
-    specialPower: "Sostenerte con una sonrisa, incluso en los días difíciles.",
-    description:
-      "Merlin es el más animado del grupo — siempre con una historia nueva y las manos abiertas, listo para ayudar.",
-    image: "/products/merlin-tallofuerte.jpg",
-  },
-  {
     name: "Tobías Matute",
     category: "Duende Trotamundos",
     age: "58 años",

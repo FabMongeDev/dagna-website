@@ -6,6 +6,7 @@ export type Product = {
   origin: string;
   specialPower: string;
   description: string;
+  image: string;
 };
 
 export function ProductCard(product: Product): string {
@@ -20,7 +21,11 @@ export function ProductCard(product: Product): string {
         </div>
 
         <div class="product-card__image">
-          <span class="product-card__placeholder">Imagen pendiente</span>
+          <img
+            src="${product.image}"
+            alt="${product.name}, ${product.category}"
+            loading="lazy"
+          />
 
           <div class="product-card__nameplate">
             <p>${product.category}</p>

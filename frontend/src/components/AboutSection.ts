@@ -28,7 +28,7 @@ export function AboutSection(): string {
 
         <div class="about-section__image">
           <div class="about-section__image-glow"></div>
-          <span>Imagen de la artesana pendiente</span>
+          <img src="/about/pandilla.jpg" alt="Las criaturas del bosque de Dagna, reunidas" />
         </div>
       </div>
     </section>

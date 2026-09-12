@@ -286,13 +286,20 @@ Completed
 - User repository (UserRepository)
 - Production deployment to Hostinger (see backend-plan.md → Deployment Strategy for the real folder layout and gotchas)
 - Production database, SMTP, and .env fully configured and verified end-to-end
+- Real product content live: 5 duendes (Augusto Sotavento, Evaristo Ramaseca, Fortunato Hojaverde, Tobías Matute, Wilfrido Gotadelluvia) with real photos, lore fields, and descriptions; real "Sobre Dagna" group photo
+- Screenshot easter egg (PrintScreen-triggered forest guardian gnome, Windows-only, decorative not protective)
+- Google Analytics (GA4) + Google Tag Manager, production-only (hostname-guarded, no dev pollution)
+- Google Search Console verified (URL-prefix property, verified via Analytics) + sitemap.xml submitted
+- Custom favicon + apple-touch-icon (replaced default Vite favicon)
+- Image weight optimization: `leaves/` sprites resized from print-resolution (~10MB total) to actual display size (~0.25MB total)
+- Social media section: lazy-loaded Facebook Page Plugin (IntersectionObserver-gated, only loads script when scrolled into view) + Instagram follow link; Facebook Page renamed from legacy `ciudadsafari` to `dagnacr`
 
 Launch scope reductions (intentional, temporary)
 
 - Login / Register / Cart hidden from navbar — not usable yet, UI only
 - `login.php` blocked via `.htaccess` in production until it uses RateLimiter + UserRepository
 - Reviews section stripped of placeholder cards; shows an invitation only, no submission form yet (submission requires Auth, per architecture decision, so it waits until Auth is complete)
-- Products remain hardcoded placeholder content in `ProductGrid.ts`, pending real photos/copy from the client
+- Instagram feed is a follow-link only, not a live embed — Meta has no free official widget for Instagram (unlike Facebook's Page Plugin); a live feed requires the Graph API + backend token refresh (tracked as future work, "Option C" in project discussions)
 
 In Progress
 
@@ -307,7 +314,8 @@ Upcoming
 - Email Verification flow
 - Password Recovery flow
 - Reviews submission form (stars 1-5, name, comment) — blocked on Auth being complete
-- Real product content (photos + copy) + image watermarking
+- Image watermarking on product photos (deferred; not applied to current 5 duendes yet)
+- Live Instagram feed via Graph API (requires Meta app review + backend token refresh — bigger effort than Facebook's Page Plugin)
 - BotKiller on Reviews form once built
 - Products API
 - Admin Panel (see docs/admin-panel-plan.md for detailed requirements)

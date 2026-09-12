@@ -12,6 +12,7 @@ import { Reviews } from "./components/Reviews";
 import { ContactSection } from "./components/ContactSection";
 import { initContactForm } from "./components/ContactForm";
 import { ScreenshotGuardian, initScreenshotGuardian } from "./components/ScreenshotGuardian";
+import { SocialFeed, initSocialFeed } from "./components/SocialFeed";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -27,6 +28,7 @@ app.innerHTML = `
     ${ProductGrid()}
     ${AboutSection()}
     ${Reviews()}
+    ${SocialFeed()}
     ${ContactSection()}
   </main>
 
@@ -40,3 +42,4 @@ initLeafRain();
 initProductCards();
 initContactForm();
 initScreenshotGuardian();
+initSocialFeed();

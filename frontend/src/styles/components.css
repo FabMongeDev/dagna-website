@@ -986,3 +986,36 @@
   cursor: pointer;
   z-index: 2;
 }
+
+/*===============================
+    Social Media Feed section
+================================*/
+
+.social-feed-section__facebook {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem auto;
+  max-width: 680px;
+}
+
+.social-feed-section__instagram-note {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-moss);
+  font-size: 0.95rem;
+}
+
+.social-feed-section__instagram-note a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.social-feed-section__instagram-note a:hover {
+  text-decoration: underline;
+}
+
+.social-feed-section {
+  padding-top: 2rem;
+}

@@ -19,7 +19,7 @@ export function ContactSection(): string {
           </div>
 
           <div class="contact-section__socials">
-            <a href="https://www.facebook.com/ciudadsafari" aria-label="Facebook">Facebook</a>
+            <a href="https://www.facebook.com/dagnacr" aria-label="Facebook">Facebook</a>
             <a href="https://www.instagram.com/dagnacr/" aria-label="Instagram">Instagram</a>
           </div>
         </div>

@@ -13,6 +13,7 @@ import { ContactSection } from "./components/ContactSection";
 import { initContactForm } from "./components/ContactForm";
 import { ScreenshotGuardian, initScreenshotGuardian } from "./components/ScreenshotGuardian";
 import { SocialFeed, initSocialFeed } from "./components/SocialFeed";
+import { GalleryCarousel, initGalleryCarousel } from "./components/GalleryCarousel";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -26,6 +27,7 @@ app.innerHTML = `
 
   <main>
     ${ProductGrid()}
+    ${GalleryCarousel()}
     ${AboutSection()}
     ${Reviews()}
     ${SocialFeed()}
@@ -40,6 +42,7 @@ initFireflies();
 initNavbar();
 initLeafRain();
 initProductCards();
+initGalleryCarousel();
 initContactForm();
 initScreenshotGuardian();
 initSocialFeed();

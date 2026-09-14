@@ -17,6 +17,7 @@ export function Navbar(): string {
       <nav class="navbar__nav">
         <a href="#home">Inicio</a>
         <a href="#shop">Catálogo</a>
+        <a href="#gallery">Galería</a>
         <a href="#about">Sobre Dagna</a>
         <a href="#reviews">Reseñas</a>
         <a href="#contact">Contacto</a>
@@ -29,6 +30,7 @@ export function Navbar(): string {
       <div class="navbar__mobile-menu" id="mobile-menu">
         <a href="#home">Inicio</a>
         <a href="#shop">Catálogo</a>
+        <a href="#gallery">Galería</a>
         <a href="#about">Sobre Dagna</a>
         <a href="#reviews">Reseñas</a>
         <a href="#contact">Contacto</a>
